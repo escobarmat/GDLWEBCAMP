@@ -1,6 +1,6 @@
 (function(){
     "use sttrict";
-    var regalo = ducument.getElementById("regalo");
+    var regalo = document.getElementById("regalo");
     document.addEventListener("DOMContentLoaded", function(){
         //Campos Datos de Usuario
         var nombre = document. 
@@ -31,9 +31,9 @@
                 var boleto2Dias = pase_dosdias.value;
                 var boletoCompleto = pase_completo.value;
                 
-                console.log("Boletos Dias"+ boletoDia);
-                console.log("Boletos 2 Dias"+ boleto2Dias);
-                console.log("Pase Completo"+ boletoCompleto);
+                console.log("Boletos Dia "+ boletoDia);
+                console.log("Boletos 2 Dias "+ boleto2Dias);
+                console.log("Pase Completo "+ boletoCompleto);
             }
         }
     });//DOM CONTENT LOADED
