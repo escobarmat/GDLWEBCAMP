@@ -19,6 +19,10 @@
         var botonRegistro = document.getElementById("btnRegistro");
         var resultado = document.getElementById("lista-productos");
 
+        //Extras
+        var camisas = document.getElementById("camisa_evento");
+        var etiquetas = document.getElementById("etiquetas");
+
         calcular.addEventListener("click", calcularMontos);
 
         function calcularMontos(event){
@@ -27,13 +31,32 @@
                 alert("Debes elegir un regalo");
                 regalo.focus()
             }else{
-                var boletoDia = pase_dia.value;
-                var boleto2Dias = pase_dosdias.value;
-                var boletoCompleto = pase_completo.value;
+                var boletoDia = parseInt(pase_dia.value,10 )|| 0;
+                var boleto2Dias = parseInt(pase_dosdias.value)|| 0;
+                var boletoCompleto = parseInt(pase_completo.value)|| 0;
+                var cantCamisas = parseInt(camisas.value)|| 0;
+                var cantEtiquetas = parseInt(etiquetas.value)|| 0;
                 
-                console.log("Boletos Dia "+ boletoDia);
-                console.log("Boletos 2 Dias "+ boleto2Dias);
-                console.log("Pase Completo "+ boletoCompleto);
+                var totalPagar = (boletoDia * 30) + (boleto2Dias * 45) +(boletoCompleto * 50) + ((cantCamisas *10) * .93) + (cantEtiquetas * 2);
+
+                var listadoProductos = [];
+
+                if(boletoDia>=1){
+                    listadoProductos.push(boletoDia + " Pase por día");
+                }
+                if(boleto2Dias>=1){
+                    listadoProductos.push(boleto2Dias + " Pases por 2 días");
+                }
+                if(boletoCompleto>=1){
+                    listadoProductos.push(boletoCompleto + " Pases completo");
+                }
+                if(cantCamisas>=1){
+                    listadoProductos.push(cantCamisas + " Camisas");
+                }
+                if(cantEtiquetas>=1){
+                    listadoProductos.push(cantEtiquetas + " Etiquetas");
+                }
+
             }
         }
     });//DOM CONTENT LOADED
